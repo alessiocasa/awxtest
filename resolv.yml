@@ -5,7 +5,7 @@
 
   tasks:
     - name: Read resolvers
-      command: cat /etc/resolv.conf | grep -v "^#"
+      command: cat /root/test.txt
       register: resolvers
       ignore_errors: true
       changed_when: false
