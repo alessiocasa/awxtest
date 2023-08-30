@@ -1,6 +1,6 @@
 ---
 - name: Update Ubuntu
-  hosts: your_ubuntu_client_group  # Replace with the name of the host group from your inventory
+  hosts: client  # Replace with the name of the host group from your inventory
   become: yes
   tasks:
     - name: Run apt update
