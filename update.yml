@@ -1,5 +1,5 @@
 ---
-- name: Update and Upgrade Ubuntu
+- name: Update and Upgrade Packages
   hosts: client  # Replace 'client' with the actual hostname or group name from your inventory
   become: yes    # Use privilege escalation (sudo) to run the tasks
 
@@ -10,7 +10,8 @@
 
     - name: Upgrade packages
       apt:
-        upgrade: dist
+        upgrade: yes
         autoremove: yes
         autoclean: yes
+
 
