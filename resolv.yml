@@ -1,0 +1,16 @@
+---
+- name: Check relayhost & NTP servers
+  hosts: client
+  gather_facts: false
+
+  tasks:
+    - name: Read resolvers
+      command: cat /etc/resolv.conf | grep -v "^#"
+      register: resolvers
+      ignore_errors: true
+      changed_when: false
+
+    - name: Report resolvers line
+      debug:
+        msg: "resolvers: {{ resolvers.stdout }}"
+      when: resolvers.stdout is defined and resolvers.stdout != ""
