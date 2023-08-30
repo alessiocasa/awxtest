@@ -1,5 +1,5 @@
 ---
-- name: Check relayhost & NTP servers
+- name: Check resolvers
   hosts: client
   gather_facts: false
 
